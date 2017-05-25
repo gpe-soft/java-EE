@@ -1,4 +1,4 @@
-package nl.gpesoft.persistence.util;
+package nl.gpesoft.persistence.common;
 
 public enum Title {
     DR("Dr"),
