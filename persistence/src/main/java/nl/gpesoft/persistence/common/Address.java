@@ -1,7 +1,5 @@
 package nl.gpesoft.persistence.common;
 
-import java.util.Date;
-
 public class Address {
 
     private String street;
