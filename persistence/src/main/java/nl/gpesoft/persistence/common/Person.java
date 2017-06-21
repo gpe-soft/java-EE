@@ -1,8 +1,15 @@
 package nl.gpesoft.persistence.common;
 
+import javax.persistence.*;
 import java.util.Date;
 
-public class Person {
+import static javax.persistence.DiscriminatorType.STRING;
+
+@Entity
+@Table(name = "PERSON")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "PERSON_TYPE", discriminatorType=STRING)
+public abstract class Person extends CommonFields {
 
     private Title title;
     private String initials;
