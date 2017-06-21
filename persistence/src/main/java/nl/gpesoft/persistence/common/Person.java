@@ -6,7 +6,7 @@ import java.util.Date;
 @Entity
 @Table(name = "PERSON")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "PERSON_TYPE", discriminatorType=DiscriminatorType.STRING)
+@DiscriminatorColumn(name = "PERSON_TYPE", discriminatorType=DiscriminatorType.STRING, length = 30)
 public abstract class Person extends CommonFields {
 
     private Title title;
