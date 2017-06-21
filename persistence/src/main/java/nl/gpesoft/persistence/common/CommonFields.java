@@ -3,7 +3,7 @@ package nl.gpesoft.persistence.common;
 import javax.persistence.*;
 
 @MappedSuperclass
-public abstract class CommonFields{
+public abstract class CommonFields {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", updatable = false, nullable = false)
