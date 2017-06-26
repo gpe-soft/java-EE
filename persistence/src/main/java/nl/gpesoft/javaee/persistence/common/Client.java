@@ -1,4 +1,4 @@
-package nl.gpesoft.persistence.common;
+package nl.gpesoft.javaee.persistence.common;
 
 import javax.persistence.MappedSuperclass;
 

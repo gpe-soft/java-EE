@@ -1,6 +1,6 @@
-package nl.gpesoft.persistence.model;
+package nl.gpesoft.javaee.persistence.model;
 
-import nl.gpesoft.persistence.common.Client;
+import nl.gpesoft.javaee.persistence.common.Client;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
