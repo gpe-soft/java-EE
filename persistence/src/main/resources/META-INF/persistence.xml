@@ -4,7 +4,7 @@
     <persistence-unit name="person" transaction-type="JTA">
 
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <jta-data-source>java:jboss/datasources/PersonDS</jta-data-source>
+        <jta-data-source>java:/jdbc/person</jta-data-source>
 
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
