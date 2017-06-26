@@ -5,13 +5,14 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>groupId</groupId>
-    <artifactId>java-EE</artifactId>
+    <groupId>nl.gpesoft.javaee</groupId>
+    <artifactId>javaee</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
 
     <modules>
         <module>persistence</module>
+        <module>domain</module>
     </modules>
 
     <dependencyManagement>
