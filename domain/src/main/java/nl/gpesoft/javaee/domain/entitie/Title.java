@@ -1,4 +1,4 @@
-package nl.gpesoft.javaee.domain.entities;
+package nl.gpesoft.javaee.domain.entitie;
 
 public enum Title {
     DR("Dr"),
