@@ -1,4 +1,4 @@
-package nl.gpesoft.javaee.domain.entitie;
+package nl.gpesoft.javaee.domain.entity;
 
 import java.util.Date;
 
