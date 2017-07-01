@@ -18,6 +18,16 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>nl.gpesoft.javaee</groupId>
+                <artifactId>domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>nl.gpesoft.javaee</groupId>
+                <artifactId>persistence</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>javax</groupId>
                 <artifactId>javaee-api</artifactId>
                 <version>7.0</version>
