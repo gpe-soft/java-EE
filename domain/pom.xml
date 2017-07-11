@@ -16,8 +16,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>nl.gpesoft.javaee</groupId>
-            <artifactId>persistence</artifactId>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
         </dependency>
     </dependencies>
 
