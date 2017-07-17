@@ -11,7 +11,9 @@
         <version>1.0.0</version>
     </parent>
 
+    <groupId>nl.gpesoft.javaee</groupId>
     <artifactId>persistence</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
