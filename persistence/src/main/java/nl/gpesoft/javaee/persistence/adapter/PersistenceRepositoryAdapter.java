@@ -1,15 +1,15 @@
 package nl.gpesoft.javaee.persistence.adapter;
 
 import nl.gpesoft.javaee.domain.entity.Developer;
-import nl.gpesoft.javaee.domain.port.persistence.Repository;
+import nl.gpesoft.javaee.domain.port.persistence.PersistenceRepository;
 
 import javax.ejb.Singleton;
 
 @Singleton
-public class RepositoryAdapter implements Repository {
+public class PersistenceRepositoryAdapter implements PersistenceRepository {
 
-    public RepositoryAdapter() {
-        System.out.println("construction of repositoryAdapter");
+    public PersistenceRepositoryAdapter() {
+        System.out.println("construction of persistenceRepositoryAdapter");
     }
 
     public void addDeveloper(Developer developer) {

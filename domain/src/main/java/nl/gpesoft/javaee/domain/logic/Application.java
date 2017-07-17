@@ -1,7 +1,7 @@
 package nl.gpesoft.javaee.domain.logic;
 
 import nl.gpesoft.javaee.domain.entity.Developer;
-import nl.gpesoft.javaee.domain.port.persistence.Repository;
+import nl.gpesoft.javaee.domain.port.persistence.PersistenceRepository;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -10,12 +10,12 @@ import javax.inject.Inject;
 public class Application {
 
     @Inject
-    public Repository repositoryAdapter;
+    public PersistenceRepository persistenceRepositoryAdapter;
 
     public void run() {
         Developer developer = new Developer();
         developer.setInitials("A.G.");
         developer.setSurname("Peterse");
-        this.repositoryAdapter.addDeveloper(developer);
+        persistenceRepositoryAdapter.addDeveloper(developer);
     }
 }
