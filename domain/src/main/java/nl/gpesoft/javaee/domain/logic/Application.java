@@ -3,10 +3,8 @@ package nl.gpesoft.javaee.domain.logic;
 import nl.gpesoft.javaee.domain.entity.Developer;
 import nl.gpesoft.javaee.domain.port.persistence.PersistenceRepository;
 
-import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-@Stateless
 public class Application {
 
     @Inject
