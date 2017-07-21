@@ -3,9 +3,6 @@ package nl.gpesoft.javaee.persistence.adapter;
 import nl.gpesoft.javaee.domain.entity.Developer;
 import nl.gpesoft.javaee.domain.port.persistence.PersistenceRepository;
 
-import javax.ejb.Singleton;
-
-@Singleton
 public class PersistenceRepositoryAdapter implements PersistenceRepository {
 
     public PersistenceRepositoryAdapter() {

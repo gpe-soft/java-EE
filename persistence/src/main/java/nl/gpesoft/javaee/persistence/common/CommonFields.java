@@ -6,7 +6,7 @@ import javax.persistence.*;
 public abstract class CommonFields {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", updatable = false, nullable = false)
+    @Column(name = "id", updatable = false, nullable = false)
     private long id;
 
     public void setId(long id) {

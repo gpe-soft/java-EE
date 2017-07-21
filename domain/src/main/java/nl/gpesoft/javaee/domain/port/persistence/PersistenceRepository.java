@@ -4,5 +4,5 @@ import nl.gpesoft.javaee.domain.entity.Developer;
 
 public interface PersistenceRepository {
 
-    void addDeveloper(Developer developer);
+   void addDeveloper(Developer developer);
 }

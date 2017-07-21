@@ -1,11 +1,18 @@
 package nl.gpesoft.javaee.persistence.common;
 
-public class Address {
+import javax.persistence.*;
+
+@Entity
+@Table(name = "ADDRESS")
+public class Address extends CommonFields {
 
     private String street;
     private int number;
     private String postalCode;
     private String town;
+
+    public Address() {
+    }
 
     public String getStreet() {
         return street;

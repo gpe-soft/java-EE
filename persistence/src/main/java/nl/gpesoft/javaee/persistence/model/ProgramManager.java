@@ -8,13 +8,13 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue(value = "Program manager")
 public class ProgramManager extends Employee {
-    private String ProgramName;
+    private String programName;
 
     public String getProgramName() {
-        return ProgramName;
+        return programName;
     }
 
     public void setProgramName(String programName) {
-        ProgramName = programName;
+        this.programName = programName;
     }
 }

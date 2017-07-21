@@ -6,7 +6,7 @@ import java.util.Date;
 @Entity
 @Table(name = "PERSON")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "PERSON_TYPE", discriminatorType=DiscriminatorType.STRING, length = 30)
+@DiscriminatorColumn(name = "personType", discriminatorType=DiscriminatorType.STRING, length = 30)
 public abstract class Person extends CommonFields {
 
     private Title title;
@@ -14,6 +14,9 @@ public abstract class Person extends CommonFields {
     private String surname;
     private Date dateOfBirth;
     private long socialSecurityNumber;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="addressId")
     private Address residentialAddress;
 
     public Title getTitle() {
