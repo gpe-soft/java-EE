@@ -7,7 +7,7 @@ import java.util.Date;
 @Table(name = "PERSON")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "personType", discriminatorType=DiscriminatorType.STRING, length = 30)
-public abstract class Person extends CommonFields {
+public abstract class PersonTable extends CommonFields {
 
     private Title title;
     private String initials;
@@ -17,7 +17,7 @@ public abstract class Person extends CommonFields {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="addressId")
-    private Address residentialAddress;
+    private AddressTable residentialAddress;
 
     public Title getTitle() {
         return title;
@@ -59,11 +59,11 @@ public abstract class Person extends CommonFields {
         this.socialSecurityNumber = socialSecurityNumber;
     }
 
-    public Address getResidentialAddress() {
+    public AddressTable getResidentialAddress() {
         return residentialAddress;
     }
 
-    public void setResidentialAddress(Address residentialAddress) {
+    public void setResidentialAddress(AddressTable residentialAddress) {
         this.residentialAddress = residentialAddress;
     }
 }

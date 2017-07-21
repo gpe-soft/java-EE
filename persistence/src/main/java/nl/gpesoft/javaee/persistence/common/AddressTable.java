@@ -4,15 +4,12 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "ADDRESS")
-public class Address extends CommonFields {
+public class AddressTable extends CommonFields {
 
     private String street;
     private int number;
     private String postalCode;
     private String town;
-
-    public Address() {
-    }
 
     public String getStreet() {
         return street;

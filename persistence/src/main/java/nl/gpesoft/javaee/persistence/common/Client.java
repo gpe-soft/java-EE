@@ -3,7 +3,7 @@ package nl.gpesoft.javaee.persistence.common;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public class Client extends Person {
+public class Client extends PersonTable {
     private String companyName;
 
     public String getCompanyName() {

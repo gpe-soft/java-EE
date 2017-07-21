@@ -4,7 +4,7 @@ import javax.persistence.MappedSuperclass;
 import java.util.Date;
 
 @MappedSuperclass
-public class Employee extends Person {
+public class Employee extends PersonTable {
     private Date employmentDate;
 
     public Date getEmploymentDate() {
