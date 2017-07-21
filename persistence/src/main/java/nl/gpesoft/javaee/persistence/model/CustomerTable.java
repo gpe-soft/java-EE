@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue(value = "Customer")
-public class Customer extends Client {
+public class CustomerTable extends Client {
     private int annualRevenue;
 
     public int getAnnualRevenue() {

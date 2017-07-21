@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue(value = "Program manager")
-public class ProgramManager extends Employee {
+public class ProgramManagerTable extends Employee {
     private String programName;
 
     public String getProgramName() {

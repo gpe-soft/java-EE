@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue(value = "Developer")
-public class Developer extends Employee {
+public class DeveloperTable extends Employee {
     private String favouriteProgrammingLanguage;
 
     public String getFavouriteProgrammingLanguage() {

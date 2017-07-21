@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue(value = "Software supplier")
-public class SoftwareSupplier extends Client {
+public class SoftwareSupplierTable extends Client {
     private String softwarePackage;
 
     public String getSoftwarePackage() {

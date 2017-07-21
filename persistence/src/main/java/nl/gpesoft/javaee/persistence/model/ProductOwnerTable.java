@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue(value = "Product owner")
-public class ProductOwner extends Employee {
+public class ProductOwnerTable extends Employee {
     private String product;
 
     public String getProduct() {
