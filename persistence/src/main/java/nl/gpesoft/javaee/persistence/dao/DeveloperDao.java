@@ -16,7 +16,6 @@ public class DeveloperDao extends Dao {
 
     public List<Developer> getDevelopers() {
         List<Developer> listDevelopers = entityManager.createQuery("SELECT d FROM DeveloperTable d").getResultList();
-        System.out.println("retrieved " + listDevelopers.size() + " developers");
         return listDevelopers;
     }
 }

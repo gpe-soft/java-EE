@@ -21,10 +21,10 @@ public class Application {
         developer.setTitle(Title.BSC);
         developer.setInitials("T.F.");
         developer.setSurname("Fortran");
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         try {
-            developer.setDateOfBirth(dateFormat.parse("01/09/1971"));
-            developer.setEmploymentDate(dateFormat.parse("07/06/1992"));
+            developer.setDateOfBirth(dateFormat.parse("1971-09-01T00:00:00Z"));
+            developer.setEmploymentDate(dateFormat.parse("1992-06-13T00:00:00Z"));
 
         } catch (ParseException parseException) {
             parseException.printStackTrace();
