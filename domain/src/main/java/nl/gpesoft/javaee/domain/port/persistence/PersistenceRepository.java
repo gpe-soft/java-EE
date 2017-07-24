@@ -8,5 +8,5 @@ public interface PersistenceRepository {
 
    void addDeveloper(Developer developer);
 
-   List<Developer> getListOfDevelopers();
+   List<Developer> getDevelopers();
 }

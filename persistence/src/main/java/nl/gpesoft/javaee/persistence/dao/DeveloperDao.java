@@ -14,8 +14,9 @@ public class DeveloperDao extends Dao {
         entityManager.persist(PersistenceMapper.toPersistenceModelDeveloper(developer));
     }
 
-    public List<Developer> getAllDevelopers() {
-        List<Developer> listAllDevelopers = new ArrayList<Developer>();
-        return listAllDevelopers;
+    public List<Developer> getDevelopers() {
+        List<Developer> listDevelopers = entityManager.createQuery("SELECT d FROM DeveloperTable d").getResultList();
+        System.out.println("retrieved " + listDevelopers.size() + " developers");
+        return listDevelopers;
     }
 }

@@ -18,7 +18,7 @@ public class PersistenceRepositoryAdapter implements PersistenceRepository {
     }
 
     @Override
-    public List<Developer> getListOfDevelopers() {
-        return null;
+    public List<Developer> getDevelopers() {
+        return developerDao.getDevelopers();
     }
 }

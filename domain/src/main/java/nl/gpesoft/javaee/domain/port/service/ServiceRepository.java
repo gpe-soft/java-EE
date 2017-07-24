@@ -1,6 +1,11 @@
 package nl.gpesoft.javaee.domain.port.service;
 
+import javax.ws.rs.core.Response;
+
 public interface ServiceRepository {
 
-    void startApplication();
+    Response addDeveloper();
+
+    Response getDevelopers();
+
 }
