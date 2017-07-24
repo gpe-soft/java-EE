@@ -9,5 +9,4 @@ public abstract class Dao {
 
     @PersistenceContext(unitName = "person")
     EntityManager entityManager;
-
 }
