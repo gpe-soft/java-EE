@@ -9,7 +9,7 @@ import java.util.Date;
 @DiscriminatorColumn(name = "personType", discriminatorType=DiscriminatorType.STRING, length = 30)
 public abstract class PersonTable extends CommonFields {
 
-    private Title title;
+    private String title;
     private String initials;
     private String surname;
     private Date dateOfBirth;
@@ -19,11 +19,12 @@ public abstract class PersonTable extends CommonFields {
     @JoinColumn(name="addressId")
     private AddressTable residentialAddress;
 
-    public Title getTitle() {
+
+    public String getTitle() {
         return title;
     }
 
-    public void setTitle(Title title) {
+    public void setTitle(String title) {
         this.title = title;
     }
 
