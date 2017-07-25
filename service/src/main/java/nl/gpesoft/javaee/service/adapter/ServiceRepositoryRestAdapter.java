@@ -9,9 +9,14 @@ import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 @Path("/start")
 public class ServiceRepositoryRestAdapter implements ServiceRepository {
+
+    Logger logger = LoggerFactory.getLogger(ServiceRepositoryRestAdapter.class);
 
     @Inject
     Application application;
@@ -36,8 +41,8 @@ public class ServiceRepositoryRestAdapter implements ServiceRepository {
     public void addDeveloper(Developer developer) {
         try {
             application.addDeveloper(developer);
-        } catch (DeveloperMustBeAnAdultException e) {
-            e.printStackTrace();
+        } catch (DeveloperMustBeAnAdultException developerMustBeAnAdultException) {
+            logger.error(developerMustBeAnAdultException.getMessage());
         }
     }
 
