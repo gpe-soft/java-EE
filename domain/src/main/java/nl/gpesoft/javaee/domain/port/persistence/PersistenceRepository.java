@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface PersistenceRepository {
 
-   void addDeveloper(Developer developer);
+    void addDeveloper(Developer developer);
 
-   List<Developer> getDevelopers();
+    List<Developer> getDevelopers();
 }

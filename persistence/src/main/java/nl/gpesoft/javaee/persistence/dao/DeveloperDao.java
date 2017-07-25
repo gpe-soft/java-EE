@@ -4,7 +4,6 @@ import nl.gpesoft.javaee.domain.entity.Developer;
 import nl.gpesoft.javaee.persistence.mapper.PersistenceMapper;
 
 import javax.ejb.Stateless;
-import java.util.ArrayList;
 import java.util.List;
 
 @Stateless //EJB to let the container manage transactions

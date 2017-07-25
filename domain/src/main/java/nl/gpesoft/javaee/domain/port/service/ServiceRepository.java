@@ -1,11 +1,12 @@
 package nl.gpesoft.javaee.domain.port.service;
 
-import javax.ws.rs.core.Response;
+import nl.gpesoft.javaee.domain.entity.Developer;
+
+import java.util.List;
 
 public interface ServiceRepository {
 
-    Response addDeveloper();
+    void addDeveloper(Developer developer);
 
-    Response getDevelopers();
-
+    List<Developer> getDevelopers();
 }
