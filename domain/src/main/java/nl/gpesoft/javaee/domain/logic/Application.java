@@ -8,13 +8,16 @@ import javax.inject.Inject;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
-import java.util.Date;
 import java.util.List;
 
 public class Application {
 
+    private PersistenceRepository persistenceRepositoryAdapter;
+
     @Inject
-    public PersistenceRepository persistenceRepositoryAdapter;
+    public Application(PersistenceRepository persistenceRepositoryAdapter) {
+        this.persistenceRepositoryAdapter = persistenceRepositoryAdapter;
+    }
 
     final static int ADULT_AGE = 18;
 
