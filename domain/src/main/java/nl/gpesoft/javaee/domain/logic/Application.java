@@ -19,7 +19,7 @@ public class Application {
         this.persistenceRepositoryAdapter = persistenceRepositoryAdapter;
     }
 
-    final static int ADULT_AGE = 18;
+    private static final int ADULT_AGE = 18;
 
     public void addDeveloper(Developer developer) throws DeveloperMustBeAnAdultException {
         if (!isDeveloperAnAdult(developer)) {
