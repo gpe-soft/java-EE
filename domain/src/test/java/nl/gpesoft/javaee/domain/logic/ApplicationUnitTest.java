@@ -11,6 +11,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static org.junit.Assert.assertTrue;
+
 public class ApplicationUnitTest {
 
     private Developer developerAdult;
@@ -30,8 +32,8 @@ public class ApplicationUnitTest {
 
         try {
             dateOfBirth = simpleDateFormat.parse("01-01-1900");
-        } catch (ParseException e) {
-            e.printStackTrace();
+        } catch (ParseException parseException) {
+            parseException.printStackTrace();
         }
 
         developerAdult = new Developer();
@@ -49,5 +51,6 @@ public class ApplicationUnitTest {
     @Test
     public void testAddDeveloperIsAdult() throws DeveloperMustBeAnAdultException {
         application.addDeveloper(developerAdult);
+        assertTrue(application.getDevelopers().size() == 1);
     }
 }

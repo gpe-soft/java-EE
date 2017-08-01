@@ -8,16 +8,16 @@ import java.util.List;
 
 public class PersistenceRepositoryMockAdapter implements PersistenceRepository {
 
+    private List<Developer> developerList = new ArrayList<>();
+
     @Override
     public void addDeveloper(Developer developer) {
+        developerList.clear();
+        developerList.add(developer);
     }
 
     @Override
     public List<Developer> getDevelopers() {
-        List<Developer> developerList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            developerList.add(new Developer());
-        }
         return developerList;
     }
 }
