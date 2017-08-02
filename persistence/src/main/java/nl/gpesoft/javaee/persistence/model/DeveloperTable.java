@@ -4,9 +4,11 @@ import nl.gpesoft.javaee.persistence.common.Employee;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @DiscriminatorValue(value = "Developer")
+@XmlRootElement
 public class DeveloperTable extends Employee {
     private String favouriteProgrammingLanguage;
 
