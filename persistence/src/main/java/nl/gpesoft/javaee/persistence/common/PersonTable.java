@@ -1,7 +1,6 @@
 package nl.gpesoft.javaee.persistence.common;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
 @Entity

@@ -23,7 +23,7 @@ public class PersistenceMapper {
 
     public static Developer toDomainModelDeveloper(DeveloperTable developerTable) {
         Developer developer = new Developer();
-        developer.setTitle(Title.valueOf(developerTable.getTitle()));
+        developer.setTitle(Title.of(developerTable.getTitle()));
         developer.setInitials(developerTable.getInitials());
         developer.setSurname(developerTable.getSurname());
         developer.setDateOfBirth(developerTable.getDateOfBirth());

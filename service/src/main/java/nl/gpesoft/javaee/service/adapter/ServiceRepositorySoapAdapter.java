@@ -10,9 +10,11 @@ import org.slf4j.LoggerFactory;
 import javax.inject.Inject;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
 @WebService
+@SOAPBinding(style = SOAPBinding.Style.DOCUMENT)
 public class ServiceRepositorySoapAdapter implements ServiceRepository {
 
     Logger logger = LoggerFactory.getLogger(ServiceRepositorySoapAdapter.class);
@@ -36,7 +38,7 @@ public class ServiceRepositorySoapAdapter implements ServiceRepository {
     @Override
     @WebMethod
     public List<Developer> getDevelopers() {
-        System.out.println("soap getting developers");
+        System.out.println("soap getting list of developers");
         return application.getDevelopers();
     }
 }
