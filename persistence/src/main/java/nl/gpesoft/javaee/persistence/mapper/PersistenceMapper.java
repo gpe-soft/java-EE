@@ -13,6 +13,7 @@ public class PersistenceMapper {
         developerTable.setTitle(developer.getTitle().title());
         developerTable.setInitials(developer.getInitials());
         developerTable.setSurname(developer.getSurname());
+        developerTable.setEmailAddress(developer.getEmailAddress());
         developerTable.setDateOfBirth(developer.getDateOfBirth());
         developerTable.setSocialSecurityNumber(developer.getSocialSecurityNumber());
         developerTable.setResidentialAddress(toPersistenceModelAddress(developer.getResidentialAddress()));
@@ -26,6 +27,7 @@ public class PersistenceMapper {
         developer.setTitle(Title.of(developerTable.getTitle()));
         developer.setInitials(developerTable.getInitials());
         developer.setSurname(developerTable.getSurname());
+        developer.setEmailAddress(developerTable.getEmailAddress());
         developer.setDateOfBirth(developerTable.getDateOfBirth());
         developer.setSocialSecurityNumber(developerTable.getSocialSecurityNumber());
         developer.setResidentialAddress(toDomainModelAddress(developerTable.getResidentialAddress()));

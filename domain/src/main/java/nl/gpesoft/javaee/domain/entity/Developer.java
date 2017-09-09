@@ -7,6 +7,7 @@ public class Developer {
     private Title title;
     private String initials;
     private String surname;
+    private String emailAddress;
     private Date dateOfBirth;
     private long socialSecurityNumber;
     private Address residentialAddress;
@@ -35,6 +36,14 @@ public class Developer {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
     }
 
     public Date getDateOfBirth() {
