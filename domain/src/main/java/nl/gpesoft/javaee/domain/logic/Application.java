@@ -12,6 +12,7 @@ import java.util.List;
 
 public class Application {
 
+    private static final int ADULT_AGE = 18;
     private PersistenceRepository persistenceRepositoryAdapter;
 
     @Inject
@@ -19,15 +20,12 @@ public class Application {
         this.persistenceRepositoryAdapter = persistenceRepositoryAdapter;
     }
 
-    private static final int ADULT_AGE = 18;
-
     public void addDeveloper(Developer developer) throws DeveloperMustBeAnAdultException {
         if (!isDeveloperAnAdult(developer)) {
             throw new DeveloperMustBeAnAdultException("Developer must be an adult");
         }
         persistenceRepositoryAdapter.addDeveloper(developer);
     }
-
 
     public List<Developer> getDevelopers() {
         return persistenceRepositoryAdapter.getDevelopers();

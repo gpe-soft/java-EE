@@ -39,7 +39,7 @@ public class ServiceRepositorySoapAdapter implements ServiceRepository {
     @Override
     @WebMethod
     public List<Developer> getDevelopers() {
-        System.out.println("soap getting list of developers");
+        logger.info("soap getting list of developers");
         return application.getDevelopers();
     }
 }
