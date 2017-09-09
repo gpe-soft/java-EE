@@ -27,11 +27,12 @@ public class ServiceRepositorySoapAdapter implements ServiceRepository {
 
     @Override
     @WebMethod
-    public void addDeveloper(Developer developer) {
+    public void addDeveloper(Developer developer) throws DeveloperMustBeAnAdultException {
         try {
             application.addDeveloper(developer);
         } catch (DeveloperMustBeAnAdultException developerMustBeAnAdultException) {
             logger.error(developerMustBeAnAdultException.getMessage());
+            throw developerMustBeAnAdultException;
         }
     }
 
