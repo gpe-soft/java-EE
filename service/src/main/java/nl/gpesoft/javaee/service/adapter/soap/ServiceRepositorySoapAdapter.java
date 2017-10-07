@@ -1,4 +1,4 @@
-package nl.gpesoft.javaee.service.adapter;
+package nl.gpesoft.javaee.service.adapter.soap;
 
 import nl.gpesoft.javaee.domain.entity.Developer;
 import nl.gpesoft.javaee.domain.exception.DeveloperMustBeAnAdultException;

@@ -56,7 +56,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <sei>nl.gpesoft.javaee.service.adapter.ServiceRepositorySoapAdapter</sei>
+                    <sei>nl.gpesoft.javaee.service.adapter.soap.ServiceRepositorySoapAdapter</sei>
                     <genWsdl>true</genWsdl>
                     <keep>true</keep>
                     <resourceDestDir>${basedir}/src/main/webapp/WEB-INF/wsdl</resourceDestDir>

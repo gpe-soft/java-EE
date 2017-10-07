@@ -2,8 +2,10 @@ package nl.gpesoft.javaee.domain.logic;
 
 import nl.gpesoft.javaee.domain.entity.Developer;
 import nl.gpesoft.javaee.domain.exception.DeveloperMustBeAnAdultException;
+import nl.gpesoft.javaee.domain.port.notify.NotificationRepository;
 import nl.gpesoft.javaee.domain.port.persistence.PersistenceRepository;
 import nl.gpesoft.javaee.persistence.adapter.mock.PersistenceRepositoryMockAdapter;
+import nl.gpesoft.javaee.service.notify.adapter.mock.NotificationMockAdapter;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -25,9 +27,11 @@ public class ApplicationUnitTest {
 
     private PersistenceRepository persistenceMockRepository = new PersistenceRepositoryMockAdapter();
 
+    private NotificationRepository notifyMockRepository = new NotificationMockAdapter();
+
     @Before
     public void setup() {
-        application = new Application(persistenceMockRepository);
+        application = new Application(persistenceMockRepository, notifyMockRepository);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
         try {
@@ -38,9 +42,12 @@ public class ApplicationUnitTest {
 
         developerAdult = new Developer();
         developerAdult.setDateOfBirth(dateOfBirth);
+        developerAdult.setEmailAddress("gpeterse@planet.nl");
 
         developerNotAnAdult = new Developer();
         developerNotAnAdult.setDateOfBirth(new Date());
+        developerAdult.setEmailAddress("gpeterse@planet.nl");
+
     }
 
     @Test(expected = DeveloperMustBeAnAdultException.class)
