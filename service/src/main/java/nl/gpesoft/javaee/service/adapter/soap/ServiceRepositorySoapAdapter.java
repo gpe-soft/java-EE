@@ -1,7 +1,9 @@
 package nl.gpesoft.javaee.service.adapter.soap;
 
 import nl.gpesoft.javaee.domain.entity.Developer;
+import nl.gpesoft.javaee.domain.exception.DeveloperEmailAddresEmptyException;
 import nl.gpesoft.javaee.domain.exception.DeveloperMustBeAnAdultException;
+import nl.gpesoft.javaee.domain.exception.EmailAddressInvalidException;
 import nl.gpesoft.javaee.domain.logic.Application;
 import nl.gpesoft.javaee.domain.port.service.ServiceRepository;
 import org.slf4j.Logger;
@@ -27,12 +29,15 @@ public class ServiceRepositorySoapAdapter implements ServiceRepository {
 
     @Override
     @WebMethod
-    public void addDeveloper(Developer developer) throws DeveloperMustBeAnAdultException {
+    public void registerDeveloper(Developer developer) throws DeveloperMustBeAnAdultException {
         try {
-            application.addDeveloper(developer);
+            application.registerDeveloper(developer);
         } catch (DeveloperMustBeAnAdultException developerMustBeAnAdultException) {
             logger.error(developerMustBeAnAdultException.getMessage());
-            throw developerMustBeAnAdultException;
+        } catch (DeveloperEmailAddresEmptyException developerEmailAddressEmptyException) {
+            logger.error(developerEmailAddressEmptyException.getMessage());
+        } catch (EmailAddressInvalidException emailAddressInvalidException) {
+            logger.error(emailAddressInvalidException.getMessage());
         }
     }
 

@@ -1,7 +1,9 @@
 package nl.gpesoft.javaee.service.adapter.rest;
 
 import nl.gpesoft.javaee.domain.entity.Developer;
+import nl.gpesoft.javaee.domain.exception.DeveloperEmailAddresEmptyException;
 import nl.gpesoft.javaee.domain.exception.DeveloperMustBeAnAdultException;
+import nl.gpesoft.javaee.domain.exception.EmailAddressInvalidException;
 import nl.gpesoft.javaee.domain.logic.Application;
 import nl.gpesoft.javaee.domain.port.service.ServiceRepository;
 
@@ -26,8 +28,8 @@ public class ServiceRepositoryRestAdapter implements ServiceRepository {
     @Path("/developer/add")
     @Consumes("application/json")
     @Produces("application/json")
-    public Response addDeveloperRestService(Developer developer) {
-        this.addDeveloper(developer);
+    public Response registerDeveloperRestService(Developer developer) {
+        this.registerDeveloper(developer);
         return Response.ok().build();
     }
 
@@ -42,12 +44,17 @@ public class ServiceRepositoryRestAdapter implements ServiceRepository {
     }
 
     @Override
-    public void addDeveloper(Developer developer) {
+    public void registerDeveloper(Developer developer) {
         try {
-            application.addDeveloper(developer);
+            application.registerDeveloper(developer);
         } catch (DeveloperMustBeAnAdultException developerMustBeAnAdultException) {
             logger.error(developerMustBeAnAdultException.getMessage());
+        } catch (DeveloperEmailAddresEmptyException developerEmailAddressEmptyException) {
+            logger.error(developerEmailAddressEmptyException.getMessage());
+        } catch (EmailAddressInvalidException emailAddressInvalidException) {
+            logger.error(emailAddressInvalidException.getMessage());
         }
+
     }
 
     @Override

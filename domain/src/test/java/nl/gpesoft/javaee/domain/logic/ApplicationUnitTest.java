@@ -1,7 +1,9 @@
 package nl.gpesoft.javaee.domain.logic;
 
 import nl.gpesoft.javaee.domain.entity.Developer;
+import nl.gpesoft.javaee.domain.exception.DeveloperEmailAddresEmptyException;
 import nl.gpesoft.javaee.domain.exception.DeveloperMustBeAnAdultException;
+import nl.gpesoft.javaee.domain.exception.EmailAddressInvalidException;
 import nl.gpesoft.javaee.domain.port.notify.NotificationRepository;
 import nl.gpesoft.javaee.domain.port.persistence.PersistenceRepository;
 import nl.gpesoft.javaee.persistence.adapter.mock.PersistenceRepositoryMockAdapter;
@@ -20,6 +22,10 @@ public class ApplicationUnitTest {
     private Developer developerAdult;
 
     private Developer developerNotAnAdult;
+
+    private Developer developerWithEmptyEmailAddress;
+
+    private Developer developerWithInvalidEmailAddress;
 
     Date dateOfBirth;
 
@@ -46,18 +52,36 @@ public class ApplicationUnitTest {
 
         developerNotAnAdult = new Developer();
         developerNotAnAdult.setDateOfBirth(new Date());
-        developerAdult.setEmailAddress("gpeterse@planet.nl");
+        developerNotAnAdult.setEmailAddress("gpeterse@planet.nl");
+
+        developerWithEmptyEmailAddress = new Developer();
+        developerWithEmptyEmailAddress.setDateOfBirth(dateOfBirth);
+        developerWithEmptyEmailAddress.setEmailAddress("");
+
+        developerWithInvalidEmailAddress = new Developer();
+        developerWithInvalidEmailAddress.setDateOfBirth(dateOfBirth);
+        developerWithInvalidEmailAddress.setEmailAddress("a");
 
     }
 
     @Test(expected = DeveloperMustBeAnAdultException.class)
-    public void testAddDeveloperNotAnAdult() throws DeveloperMustBeAnAdultException {
-        application.addDeveloper(developerNotAnAdult);
+    public void testAddDeveloperNotAnAdult() throws DeveloperMustBeAnAdultException, DeveloperEmailAddresEmptyException, EmailAddressInvalidException {
+        application.registerDeveloper(developerNotAnAdult);
     }
 
     @Test
-    public void testAddDeveloperIsAdult() throws DeveloperMustBeAnAdultException {
-        application.addDeveloper(developerAdult);
+    public void testAddDeveloperIsAdult() throws DeveloperMustBeAnAdultException, DeveloperEmailAddresEmptyException, EmailAddressInvalidException {
+        application.registerDeveloper(developerAdult);
         assertTrue(application.getDevelopers().size() == 1);
+    }
+
+    @Test(expected = DeveloperEmailAddresEmptyException.class)
+    public void testAddDeveloperWithEmptyEmailAddress() throws DeveloperMustBeAnAdultException, DeveloperEmailAddresEmptyException, EmailAddressInvalidException {
+        application.registerDeveloper(developerWithEmptyEmailAddress);
+    }
+
+    @Test(expected = EmailAddressInvalidException.class)
+    public void testAddDeveloperWithInvalidEmailAddress() throws DeveloperMustBeAnAdultException, DeveloperEmailAddresEmptyException, EmailAddressInvalidException {
+        application.registerDeveloper(developerWithInvalidEmailAddress);
     }
 }
